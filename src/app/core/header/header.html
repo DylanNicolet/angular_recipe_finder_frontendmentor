@@ -1,0 +1,24 @@
+<header>
+    <img src="/assets/images/logo.svg" alt="Logo of Healthy Recipe Finder">
+
+    <button id="burger-btn" (click)="setMenuStatus()">
+        <img src="/assets/images/icon-hamburger-menu.svg" alt="">
+    </button>
+
+    @if (menuIsOpen()) {
+        <nav id="nav-menu">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Recipes</a>
+                </li>
+            </ul>
+        </nav>
+        <a id="recipe-link" class="btn-primary" href="#">Browse recipes</a>
+    }
+</header>
