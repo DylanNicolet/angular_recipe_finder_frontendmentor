@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Hero } from './hero/hero';
 import { AdvantagesSection } from './advantages-section/advantages-section';
-import { RealLifeSection } from './real-life-section/real-life-section';
+import { TextWithImage } from '../../components/text-with-image/text-with-image';
 import { CookSmarter } from '../../components/cook-smarter/cook-smarter';
 
 @Component({
@@ -9,7 +9,7 @@ import { CookSmarter } from '../../components/cook-smarter/cook-smarter';
   imports: [
     Hero, 
     AdvantagesSection, 
-    RealLifeSection,
+    TextWithImage,
     CookSmarter
   ],
   templateUrl: './homepage.html',

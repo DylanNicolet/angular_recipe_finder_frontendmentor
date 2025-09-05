@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RealLifeSection } from './real-life-section';
+import { TextWithImage } from './text-with-image';
 
-describe('RealLifeSection', () => {
-  let component: RealLifeSection;
-  let fixture: ComponentFixture<RealLifeSection>;
+describe('TextWithImage', () => {
+  let component: TextWithImage;
+  let fixture: ComponentFixture<TextWithImage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RealLifeSection]
+      imports: [TextWithImage]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RealLifeSection);
+    fixture = TestBed.createComponent(TextWithImage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,26 @@
+.text-with-image {
+    width: 100%;
+}
+
+// Dekstop
+@media (min-width: 769px) { // Need to fix the width ehre for desktop
+    .text-with-image {
+        display: flex;
+        flex-wrap: nowrap;
+
+        &.img-left {
+            .text-wrapper {
+                order: 2;
+            }
+
+            img {
+                order: 1;
+            }
+        }
+
+        img {
+            // Allow parent component to control desktop width via CSS variable
+            width: var(--desktop-img-width, 100%);
+        }
+    }
+}
