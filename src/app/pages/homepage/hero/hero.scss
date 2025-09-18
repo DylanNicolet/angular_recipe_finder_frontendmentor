@@ -1,0 +1,26 @@
+@use 'index' as *;
+
+.hero {
+    &__title {
+        font-size: 3.25rem;
+        font-weight: 800;
+        line-height: 3.55rem;
+        letter-spacing: -0.13rem;
+        margin: 3rem 0 1rem;
+    }
+
+    &__description {
+        margin-bottom: 2rem;
+    }
+
+    &__explore-link {
+        margin-bottom: 2.5rem;
+        width: max-content;
+    }
+
+    &__main-img {
+        width: 100%;
+        border-radius: 0.8rem;
+        box-shadow: 0rem 0rem 0rem 0.22rem $primary-color-0;
+    }
+}

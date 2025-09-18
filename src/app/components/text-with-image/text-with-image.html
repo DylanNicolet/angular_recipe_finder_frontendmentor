@@ -4,13 +4,13 @@
     [style.--desktop-img-width.%]="imgDesktopWidth() || null"
 >
     <!-- Project any text/content coming from parent -->
-    <div class="text-wrapper">
+    <div class="text-with-image__text-wrapper">
         <ng-content></ng-content>
     </div>
 
     <picture>
         <source [srcset]="imgSmallSrc()" media="(max-width: 768px)">
         <source [srcset]="imgLargeSrc()" media="(min-width: 769px)">
-        <img [src]="imgSmallSrc()" [alt]="imgAlt()">
+        <img class="text-with-image__img" [src]="imgSmallSrc()" [alt]="imgAlt()">
     </picture>
 </section>

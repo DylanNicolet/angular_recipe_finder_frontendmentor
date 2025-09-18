@@ -1,0 +1,21 @@
+@use 'index' as *;
+
+.cook-smarter {
+    background-color: $primary-color-200;
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 12px;
+
+    h2 {
+        line-height: 3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .btn-primary {
+        width: max-content;
+        margin: 1.8rem auto 0;
+        font-size: 1.13rem;
+        border-radius: 10px;
+        padding: 1rem 1.8rem;
+    }
+}

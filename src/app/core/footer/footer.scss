@@ -1,0 +1,19 @@
+footer {
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+
+    .socials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .made-with {
+        p {
+            font-size: 1rem;
+        }
+    }
+}

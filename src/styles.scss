@@ -1,8 +1,118 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'index' as *;
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/assets/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/assets/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/assets/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure {
+    margin: 0;
+    padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    img {
+        display: inline-block; /* ensures padding on link affects image */
+    }
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    margin: 0;
+}
+
 body {
-    background-color: gray;
+    margin: 1rem;
+    background-color: $primary-color-100;
+    font-family: 'Nunito';
+    font-size: 1.1rem;
+}
+
+p, h1, h2, h3, h4, li, a {
+    color: $primary-color-900;
+}
+
+p {
+    line-height: 1.9rem;
+    font-size: 1.25rem;
+    letter-spacing: -0.03rem
+}
+
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 3.44rem;
+    letter-spacing: -0.13rem;
 }
 
 .highlighted-bg {
-    color: red;
+    position: relative;
+    display: inline-block;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        top: 70%;
+        transform: translateY(-50%);
+        background: #fe9e6b63;
+        border-radius: 4px;
+        z-index: -1;
+    }
+}
+
+.btn-primary {
+    display: block;
+    background-color: $primary-color-900;
+    color: $primary-color-0;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.69rem;
+    letter-spacing: -0.03rem;
 }

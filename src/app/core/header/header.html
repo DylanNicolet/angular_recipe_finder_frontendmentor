@@ -1,24 +1,26 @@
-<header>
-    <img src="/assets/images/logo.svg" alt="Logo of Healthy Recipe Finder">
+<header class="header">
+    <img class="header__logo" src="/assets/images/logo.svg" alt="Logo of Healthy Recipe Finder">
 
-    <button id="burger-btn" (click)="setMenuStatus()">
+    <button class="header__burger-btn" (click)="setMenuStatus()">
         <img src="/assets/images/icon-hamburger-menu.svg" alt="">
     </button>
 
     @if (menuIsOpen()) {
-        <nav id="nav-menu">
-            <ul>
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Recipes</a>
-                </li>
-            </ul>
-        </nav>
-        <a id="recipe-link" class="btn-primary" href="#">Browse recipes</a>
+        <section class="header__menu-popin">
+            <nav class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    <li>
+                        <a href="/recipes">Recipes</a>
+                    </li>
+                </ul>
+            </nav>
+            <a class="btn-primary recipe-link" href="/recipes">Browse recipes</a>
+        </section>
     }
 </header>
