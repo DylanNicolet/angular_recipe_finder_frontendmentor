@@ -1,0 +1,13 @@
+<section class="recipe-card">
+    <picture>
+        <source srcset="{{ imgSmallSrc }}" media="(max-width: 768px)">
+        <source srcset="{{ imgLargeSrc }}" media="(min-width: 769px)">
+        <img class="hero__main-img" src="{{ imgSmallSrc }}" alt="{{ title }}">
+    </picture>
+    <h2>{{ title }}</h2>
+    <p>{{ overview }}</p>
+</section>
+
+<p><strong>Servings:</strong> {{ servings }}</p>
+<p><strong>Prep time:</strong> {{ prepMinutes }} min</p>
+<p><strong>Cook time:</strong> {{ cookMinutes }} min</p>

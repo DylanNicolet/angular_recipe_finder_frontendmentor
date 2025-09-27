@@ -1,0 +1,17 @@
+<h1>Explore our simple, healthy recipes</h1>
+<p>
+    Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.
+</p>
+
+@for(recipe of recipes; track recipe.id){
+    <app-recipe-card 
+        [imgSmallSrc]="recipe.image.small"
+        [imgLargeSrc]="recipe.image.large"
+        [title]="recipe.title"
+        [overview]="recipe.overview"
+        [servings]="recipe.servings"
+        [prepMinutes]="recipe.prepMinutes"
+        [cookMinutes]="recipe.cookMinutes"
+        [slug]="recipe.slug" 
+    ></app-recipe-card>
+}
