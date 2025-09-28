@@ -3,7 +3,57 @@
     Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.
 </p>
 
-@for(recipe of recipes; track recipe.id){
+<div class="filter-wrapper">
+    <!-- Prep Time filter -->
+    <div class="filter">
+        <button class="filter__open-button">Max Prep Time</button>
+        <fieldset class="filter__choices">
+            <label>
+                <input type="radio" name="prep-time" [formControl]="prepTime" [value]="0">
+                0 minutes
+            </label>
+            <label>
+                <input type="radio" name="prep-time" [formControl]="prepTime" [value]="5">
+                5 minutes
+            </label>
+            <label>
+                <input type="radio" name="prep-time" [formControl]="prepTime" [value]="10">
+                10 minutes
+            </label>
+        </fieldset>
+        <button class="filter__clear-button" (click)="clearPrepTime()">Clear</button>
+    </div>
+
+    <!-- Cook Time filter -->
+    <div class="filter">
+        <button class="filter__open-button">Max Cook Time</button>
+        <fieldset class="filter__choices">
+            <label>
+                <input type="radio" name="cook-time" [formControl]="cookTime" [value]="0">
+                0 minutes
+            </label>
+            <label>
+                <input type="radio" name="cook-time" [formControl]="cookTime" [value]="5">
+                5 minutes
+            </label>
+            <label>
+                <input type="radio" name="cook-time" [formControl]="cookTime" [value]="10">
+                10 minutes
+            </label>
+            <label>
+                <input type="radio" name="cook-time" [formControl]="cookTime" [value]="15">
+                15 minutes
+            </label>
+            <label>
+                <input type="radio" name="cook-time" [formControl]="cookTime" [value]="20">
+                20 minutes
+            </label>
+        </fieldset>
+        <button class="filter__clear-button" (click)="clearCookTime()">Clear</button>
+    </div>
+</div>
+
+@for(recipe of filteredRecipes; track recipe.id){
     <app-recipe-card 
         [imgSmallSrc]="recipe.image.small"
         [imgLargeSrc]="recipe.image.large"
