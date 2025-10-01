@@ -51,6 +51,8 @@
         </fieldset>
         <button class="filter__clear-button" (click)="clearCookTime()">Clear</button>
     </div>
+
+    <input id="search-input" [formControl]="searchInput" type="text" placeholder="Search by name or ingredient…">
 </div>
 
 @for(recipe of filteredRecipes; track recipe.id){
