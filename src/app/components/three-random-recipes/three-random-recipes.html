@@ -1,0 +1,12 @@
+@for(recipe of threeRandomRecipe(); track recipe;){
+    <app-recipe-card
+        [imgSmallSrc]="recipe.image.small"
+        [imgLargeSrc]="recipe.image.large"
+        [title]="recipe.title"
+        [overview]="recipe.overview"
+        [servings]="recipe.servings"
+        [prepMinutes]="recipe.prepMinutes"
+        [cookMinutes]="recipe.cookMinutes"
+        [slug]="recipe.slug"
+    ></app-recipe-card>
+}

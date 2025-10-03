@@ -1,0 +1,28 @@
+@if (recipe) {
+    <picture>
+        <source srcset="{{ recipe.image.small }}" media="(max-width: 768px)">
+        <source srcset="{{ recipe.image.large }}" media="(min-width: 769px)">
+        <img class="hero__main-img" src="{{ recipe.image.small }}" alt="{{ recipe.title }}">
+    </picture>
+    <section class="info">
+        <h1>{{ recipe.title }}</h1>
+        <p>{{ recipe.overview }}</p>
+
+        <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+        <p><strong>Prep:</strong> {{ recipe.prepMinutes }} minutes</p>
+        <p><strong>Cook:</strong> {{ recipe.cookMinutes }} minutes</p>
+
+        <h2>Ingredients:</h2>
+        <ul>
+            @for(ingredient of recipe.ingredients; track ingredient ) {
+                <li>{{ ingredient }}</li>
+            }
+        </ul>
+
+
+    </section>
+} @else {
+    <p>Recipe not found.</p>
+}
+
+<app-three-random-recipes></app-three-random-recipes>

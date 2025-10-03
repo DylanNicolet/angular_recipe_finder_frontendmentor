@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-recipe-card',
     standalone: true,
-    imports: [],
+    imports: [RouterModule],
     templateUrl: './recipe-card.html',
     styleUrl: './recipe-card.scss'
 })

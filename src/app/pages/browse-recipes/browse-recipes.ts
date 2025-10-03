@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectorRef } from '@angular/core';
 import { RecipeCard } from "../../components/recipe-card/recipe-card";
 import { DataService } from '../../data';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
@@ -23,13 +23,17 @@ export class BrowseRecipes {
     prepTime = new FormControl<number | null>(null);
     cookTime = new FormControl<number | null>(null);
 
-    constructor(private dataService: DataService) {}
+    constructor(
+        private dataService: DataService,
+        private cdr: ChangeDetectorRef
+    ) {}
 
     ngOnInit() {
         // Emulate data being fetch from API (currently JSON file in assets folder)
         this.dataService.getData().subscribe((data) => {
             this.recipes = data;
             this.filteredRecipes = data;
+            this.cdr.detectChanges(); // force update template
         });
 
         // Track changes to Search input field
