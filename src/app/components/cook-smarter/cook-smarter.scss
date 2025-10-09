@@ -19,3 +19,13 @@
         padding: 1rem 1.8rem;
     }
 }
+
+@include tablet-only {
+    .cook-smarter {
+        padding: 5.3rem 1rem;
+
+        .btn-primary {
+            margin: 2.5rem auto 0;
+        }
+    }
+}

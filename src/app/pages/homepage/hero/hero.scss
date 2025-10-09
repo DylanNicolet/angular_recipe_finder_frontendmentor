@@ -24,3 +24,12 @@
         box-shadow: 0rem 0rem 0rem 0.22rem $primary-color-0;
     }
 }
+
+@include tablet-only {
+    .hero {
+        &__title {
+            font-size: 4rem;
+            line-height: 4.44rem;
+        }
+    }
+} 

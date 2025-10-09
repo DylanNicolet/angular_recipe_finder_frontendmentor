@@ -61,7 +61,7 @@ textarea {
 }
 
 body {
-    margin: 1rem;
+    padding: 1rem;
     background-color: $primary-color-100;
     font-family: 'Nunito';
     font-size: 1.1rem;
@@ -116,3 +116,13 @@ h2 {
     line-height: 1.69rem;
     letter-spacing: -0.03rem;
 }
+
+@include tablet-only {
+    body {
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+} 

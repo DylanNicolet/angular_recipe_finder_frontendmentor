@@ -56,7 +56,6 @@
                 li {
                     padding: 0.75rem 0.5rem;
                     list-style: none;
-    
                 }
             }
         }
@@ -67,3 +66,15 @@
         }
     }
 }
+
+@include tablet-only {
+    .header {
+        &::after {
+            top: calc(40px + 2rem);
+        }
+
+        &__logo {
+            width: 16rem;
+        }
+    }
+} 

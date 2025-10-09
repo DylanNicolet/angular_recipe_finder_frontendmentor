@@ -1,3 +1,5 @@
+@use 'index' as *;
+
 footer {
     width: 100%;
     text-align: center;
@@ -14,6 +16,22 @@ footer {
     .made-with {
         p {
             font-size: 1rem;
+        }
+    }
+}
+
+@include tablet-only {
+    footer {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        .socials {
+        }
+
+        .made-with {
+            p {
+            }
         }
     }
 }

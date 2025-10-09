@@ -1,3 +1,5 @@
+@use 'index' as *;
+
 .text-with-image {
     width: 100%;
     margin-bottom: 4rem;
@@ -15,22 +17,37 @@
     }
 }
 
+@include tablet-only {
+    .text-with-image {
+        margin-bottom: 5rem;
+
+        &__text-wrapper {
+            gap: 1.3rem;
+        }
+
+        &__img {
+            margin-top: 2.3rem;
+            border-radius: 20px;
+        }
+    }
+}
+
 // Dekstop
 @media (min-width: 769px) { // Need to fix the width ehre for desktop
     .text-with-image {
         display: flex;
         flex-wrap: nowrap;
-
+    
         &.img-left {
             .text-wrapper {
                 order: 2;
             }
-
+    
             img {
                 order: 1;
             }
         }
-
+    
         img {
             // Allow parent component to control desktop width via CSS variable
             width: var(--desktop-img-width, 100%);

@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use 'maps' as maps;
+
+@mixin tablet-only {
+  @media only screen and (min-width: map.get(maps.$breakpoints, tablette)) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media only screen and (min-width: map.get(maps.$breakpoints, desktop)) {
+    @content;
+  }
+}
+
+@mixin ultra-wide-only {
+  @media only screen and (min-width: map.get(maps.$breakpoints, ultra-wide)) {
+    @content;
+  }
+}
