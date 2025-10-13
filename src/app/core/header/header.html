@@ -4,23 +4,21 @@
     <button class="header__burger-btn" (click)="setMenuStatus()">
         <img src="/assets/images/icon-hamburger-menu.svg" alt="">
     </button>
-
-    @if (menuIsOpen()) {
-        <section class="header__menu-popin">
-            <nav class="nav-menu">
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                    <li>
-                        <a href="/recipes">Recipes</a>
-                    </li>
-                </ul>
-            </nav>
-            <a class="btn-primary recipe-link" href="/recipes">Browse recipes</a>
-        </section>
-    }
+    
+    <section [class]="`header__menu-popin ${menuIsOpen() ? 'header__menu-popin--open' : ''}`">
+        <nav class="nav-menu">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/about">About</a>
+                </li>
+                <li>
+                    <a href="/recipes">Recipes</a>
+                </li>
+            </ul>
+        </nav>
+        <a class="btn-primary recipe-link" href="/recipes">Browse recipes</a>
+    </section>
 </header>

@@ -126,3 +126,9 @@ h2 {
         font-size: 3rem;
     }
 } 
+
+@include desktop-only {
+    body {
+        padding: 20px;
+    }
+} 
