@@ -9,16 +9,16 @@
         <nav class="nav-menu">
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
                 </li>
                 <li>
-                    <a href="/about">About</a>
+                    <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
                 </li>
                 <li>
-                    <a href="/recipes">Recipes</a>
+                    <a routerLink="/recipes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Recipes</a>
                 </li>
             </ul>
         </nav>
-        <a class="btn-primary recipe-link" href="/recipes">Browse recipes</a>
+        <a class="btn-primary recipe-link" routerLink="/recipes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Browse recipes</a>
     </section>
 </header>

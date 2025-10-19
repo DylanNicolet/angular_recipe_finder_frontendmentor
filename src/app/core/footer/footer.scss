@@ -3,7 +3,7 @@
 footer {
     width: 100%;
     text-align: center;
-    padding-top: 2rem;
+    padding: 2rem;
 
     .socials {
         display: flex;
@@ -30,6 +30,6 @@ footer {
 
 @include desktop-only {
     footer {
-        padding: 2.5rem 7.7rem 0;
+        padding: 2.5rem 7.7rem;
     }
 }
