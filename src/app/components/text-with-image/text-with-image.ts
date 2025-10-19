@@ -17,9 +17,13 @@ export class TextWithImage {
     // Image shown on larger devices (≥ 769px)
     imgLargeSrc = input<string>("");
 
-    // Width applied to the desktop image (percentage).
+    // Width applied to the text on desktop (in percentage).
     // Passed down as a CSS variable to keep responsiveness in CSS.
-    imgDesktopWidth = input<string>("");
+    textWrapperWidth = input<string>("");
+
+    // Gap applied between the text and the image on desktop (in px).
+    // Passed down as a CSS variable to keep responsiveness in CSS.
+    desktopGap = input<string>("");
 
     // Alternative text for the image (accessibility)
     imgAlt = input<string>("");

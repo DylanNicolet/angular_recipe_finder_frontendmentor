@@ -32,11 +32,12 @@
     }
 }
 
-// Dekstop
-@media (min-width: 769px) { // Need to fix the width ehre for desktop
+@include desktop-only {
     .text-with-image {
         display: flex;
         flex-wrap: nowrap;
+        align-items: center;
+        gap: var(--desktop-gap, 0rem); // Variable passed from component's HTML
     
         &.img-left {
             .text-wrapper {
@@ -47,10 +48,14 @@
                 order: 1;
             }
         }
-    
-        img {
-            // Allow parent component to control desktop width via CSS variable
-            width: var(--desktop-img-width, 100%);
+
+        &__text-wrapper {
+            width: var(--text-wrapper-width, 100%); // Variable passed from component's HTML
+        }
+
+        &__img {
+            margin-top: 0;
+            border-radius: 20px;
         }
     }
 }

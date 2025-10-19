@@ -49,3 +49,23 @@
         }
     }
 }
+
+@include desktop-only {
+    .advantages {
+        padding-top: 6rem;
+
+        &__title {
+            text-align: center;
+        }
+
+        &__card-wrapper {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        &__card {
+            width: 376px;
+        }
+    }
+}
