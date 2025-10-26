@@ -2,14 +2,16 @@
     <picture>
         <source srcset="{{ imgSmallSrc }}" media="(max-width: 768px)">
         <source srcset="{{ imgLargeSrc }}" media="(min-width: 769px)">
-        <img class="hero__main-img" src="{{ imgSmallSrc }}" alt="{{ title }}">
+        <img class="recipe-card__img" src="{{ imgSmallSrc }}" alt="{{ title }}">
     </picture>
-    <h2>{{ title }}</h2>
-    <p>{{ overview }}</p>
+    <h2 class="recipe-card__title">{{ title }}</h2>
+    <p class="recipe-card__overview">{{ overview }}</p>
+
+    <div class="recipe-card__stats-wrapper">
+        <p><img src="../../../assets/images/icon-servings.svg" alt=""> Servings: {{ servings }}</p>
+        <p><img src="../../../assets/images/icon-prep-time.svg" alt=""> Prep: {{ prepMinutes }} mins</p>
+        <p><img src="../../../assets/images/icon-cook-time.svg" alt=""> Cook: {{ cookMinutes }} mins</p>
+    </div>
+    
+    <a [routerLink]="['/recipes', slug]" class="btn-primary recipe-card__link">View Recipe</a>
 </section>
-
-<p><strong>Servings:</strong> {{ servings }}</p>
-<p><strong>Prep time:</strong> {{ prepMinutes }} min</p>
-<p><strong>Cook time:</strong> {{ cookMinutes }} min</p>
-
-<a [routerLink]="['/recipes', slug]">View Recipe</a>

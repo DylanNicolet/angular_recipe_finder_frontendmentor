@@ -130,6 +130,13 @@ export class BrowseRecipes {
     // Toggle cook time filter dropdown
     toggleCookTimeFilter() {
         this.isCookTimeFilterActive.update(value => !value);
+    }
+
+    turnOffPrepTimeFilter() {
         this.isPrepTimeFilterActive.update(() => false);
+    }
+
+    turnOffCookTimeFilter() {
+        this.isCookTimeFilterActive.update(() => false);
     }
 }

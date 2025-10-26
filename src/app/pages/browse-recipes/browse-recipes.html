@@ -3,9 +3,9 @@
     Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.
 </p>
 
-<div class="filter-wrapper">
+<section class="filter-wrapper">
     <!-- Prep Time filter -->
-    <div class="filter">
+    <div class="filter" (mouseleave)="turnOffPrepTimeFilter()" (blur)="turnOffPrepTimeFilter()">
         <button class="filter__open-button" (click)="togglePrepTimeFilter()">
             Max Prep Time
             <img src="/assets/images/icon-chevron-down.svg" alt="">
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Cook Time filter -->
-    <div class="filter">
+    <div class="filter" (mouseleave)="turnOffCookTimeFilter()" (blur)="turnOffCookTimeFilter()">
         <button class="filter__open-button" (click)="toggleCookTimeFilter()">
             Max Cook Time
             <img src="/assets/images/icon-chevron-down.svg" alt="">
@@ -58,18 +58,22 @@
         </fieldset>
     </div>
 
-    <input id="search-input" [formControl]="searchInput" type="text" placeholder="Search by name or ingredient…">
-</div>
+    <div class="search-wrapper">
+        <input id="search-input" [formControl]="searchInput" type="text" placeholder="Search by name or ingredient…">
+    </div>
+</section>
 
-@for(recipe of filteredRecipes; track recipe.id){
-    <app-recipe-card 
-        [imgSmallSrc]="recipe.image.small"
-        [imgLargeSrc]="recipe.image.large"
-        [title]="recipe.title"
-        [overview]="recipe.overview"
-        [servings]="recipe.servings"
-        [prepMinutes]="recipe.prepMinutes"
-        [cookMinutes]="recipe.cookMinutes"
-        [slug]="recipe.slug" 
-    ></app-recipe-card>
-}
+<section class="recipe-card-wrapper">
+    @for(recipe of filteredRecipes; track recipe.id){
+        <app-recipe-card 
+            [imgSmallSrc]="recipe.image.small"
+            [imgLargeSrc]="recipe.image.large"
+            [title]="recipe.title"
+            [overview]="recipe.overview"
+            [servings]="recipe.servings"
+            [prepMinutes]="recipe.prepMinutes"
+            [cookMinutes]="recipe.cookMinutes"
+            [slug]="recipe.slug" 
+        ></app-recipe-card>
+    }
+</section>
