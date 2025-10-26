@@ -14,6 +14,8 @@ export class BrowseRecipes {
     recipes: any[] = [];
     filteredRecipes: any[] = [];
 
+    isPrepTimeFilterActive = signal<boolean>(false);
+    isCookTimeFilterActive = signal<boolean>(false);
     isSearchActive = signal<boolean>(false);
 
     // Search input
@@ -113,9 +115,21 @@ export class BrowseRecipes {
     clearPrepTime() {
         this.prepTime.setValue(null);
     }
-
+    
     // Reset cookTime filter
     clearCookTime() {
         this.cookTime.setValue(null);
+    }
+
+    // Toggle prep time filter dropdown
+    togglePrepTimeFilter() {
+        this.isPrepTimeFilterActive.update(value => !value);
+        this.isCookTimeFilterActive.update(() => false);
+    }
+
+    // Toggle cook time filter dropdown
+    toggleCookTimeFilter() {
+        this.isCookTimeFilterActive.update(value => !value);
+        this.isPrepTimeFilterActive.update(() => false);
     }
 }

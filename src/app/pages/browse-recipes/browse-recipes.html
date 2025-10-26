@@ -1,13 +1,16 @@
-<h1>Explore our simple, healthy recipes</h1>
-<p>
+<h1 class="page-title">Explore our simple, healthy recipes</h1>
+<p class="page-description">
     Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.
 </p>
 
 <div class="filter-wrapper">
     <!-- Prep Time filter -->
     <div class="filter">
-        <button class="filter__open-button">Max Prep Time</button>
-        <fieldset class="filter__choices">
+        <button class="filter__open-button" (click)="togglePrepTimeFilter()">
+            Max Prep Time
+            <img src="/assets/images/icon-chevron-down.svg" alt="">
+        </button>
+        <fieldset [class]="`filter__choices ${isPrepTimeFilterActive() && 'active'}`">
             <label>
                 <input type="radio" name="prep-time" [formControl]="prepTime" [value]="0">
                 0 minutes
@@ -20,14 +23,17 @@
                 <input type="radio" name="prep-time" [formControl]="prepTime" [value]="10">
                 10 minutes
             </label>
+            <button class="clear-button" (click)="clearPrepTime()">Clear</button>
         </fieldset>
-        <button class="filter__clear-button" (click)="clearPrepTime()">Clear</button>
     </div>
 
     <!-- Cook Time filter -->
     <div class="filter">
-        <button class="filter__open-button">Max Cook Time</button>
-        <fieldset class="filter__choices">
+        <button class="filter__open-button" (click)="toggleCookTimeFilter()">
+            Max Cook Time
+            <img src="/assets/images/icon-chevron-down.svg" alt="">
+        </button>
+        <fieldset [class]="`filter__choices ${isCookTimeFilterActive() && 'active'}`">
             <label>
                 <input type="radio" name="cook-time" [formControl]="cookTime" [value]="0">
                 0 minutes
@@ -48,8 +54,8 @@
                 <input type="radio" name="cook-time" [formControl]="cookTime" [value]="20">
                 20 minutes
             </label>
+            <button class="clear-button" (click)="clearCookTime()">Clear</button>
         </fieldset>
-        <button class="filter__clear-button" (click)="clearCookTime()">Clear</button>
     </div>
 
     <input id="search-input" [formControl]="searchInput" type="text" placeholder="Search by name or ingredient…">
