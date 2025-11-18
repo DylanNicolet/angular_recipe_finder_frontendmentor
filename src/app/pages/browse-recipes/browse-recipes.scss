@@ -98,3 +98,64 @@
     flex-direction: column;
     gap: 2rem;
 }
+
+@include tablet-only {
+    .page-title {
+        margin-top: 3.2rem;
+        font-size: 3rem;
+        line-height: 3.6rem;
+    }
+
+    .filter-wrapper {
+        flex-direction: row;
+        gap: 12px;
+
+        .filter {
+            &__open-button {
+                padding: 0.5rem 0.6rem 0.5rem 1rem;
+            }
+        }
+
+        .search-wrapper {
+            flex-grow: 1;
+        }
+    }
+}
+
+@include desktop-only {
+    .page-title {
+        margin-top: 5rem;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        text-align: center;
+    }
+
+    .page-description {
+        text-align: center;
+        margin: 0 auto 4rem;
+        width: 60%;
+    }
+
+    .filter-wrapper {
+        gap: 20px;
+
+        .search-wrapper {
+            margin-left: auto;
+            flex-grow: unset;
+            width: 310px;
+            height: min-content;
+        }
+    }
+
+    .recipe-card-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        width: 100%;
+
+        & > * {
+            min-width: 0;
+        }
+    }
+
+}

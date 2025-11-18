@@ -1,9 +1,5 @@
 <section class="recipe-card">
-    <picture>
-        <source srcset="{{ imgSmallSrc }}" media="(max-width: 768px)">
-        <source srcset="{{ imgLargeSrc }}" media="(min-width: 769px)">
-        <img class="recipe-card__img" src="{{ imgSmallSrc }}" alt="{{ title }}">
-    </picture>
+    <img class="recipe-card__img" src="{{ imgSmallSrc }}" alt="{{ title }}">
     <h2 class="recipe-card__title">{{ title }}</h2>
     <p class="recipe-card__overview">{{ overview }}</p>
 
